@@ -42,12 +42,37 @@ function correctGuess (a) {
 }
 
 function wrongGuess () {
-  console.log('wrong guess')
-  $('.hangman').append(wrongPip.clone())
+  var index = wrongGuesses.length
+  console.log(index)
+  switch (index) {
+    case 1:
+      $('.hangman').css('background-image', 'url("img/Hangman-1.png")')
+      break
+    case 2:
+      $('.hangman').css('background-image', 'url("img/Hangman-2.png")')
+      break
+    case 3:
+      $('.hangman').css('background-image', 'url("img/Hangman-3.png")')
+      break
+    case 4:
+      $('.hangman').css('background-image', 'url("img/Hangman-4.png")')
+      break
+    case 5:
+      $('.hangman').css('background-image', 'url("img/Hangman-5.png")')
+      break
+    case 6:
+      $('.hangman').css('background-image', 'url("img/Hangman-6.png")')
+      $('.wordarea').text(`You lose! The phrase was ${ansString}.`)
+      break
+  }
 }
 
 function winNotice () {
   $('.hangman').replaceWith(winCondition)
+}
+
+function loseNotice () {
+  console.log('lose')
 }
 
 answerButton.one('click', storeAnswer)

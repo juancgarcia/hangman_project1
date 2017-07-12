@@ -31,11 +31,18 @@ function compareGuess () {
   } else {
     wrongGuesses.push(guess)
     wrongGuess ()
+    checkForLoss ()
   }
 }
 
 function checkForWin () {
   if (rightGuesses.length === answer.length) {
     winNotice ()
+  }
+}
+
+function checkForLoss () {
+  if (wrongGuesses.length === 5) {
+    loseNotice ()
   }
 }
