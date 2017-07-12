@@ -1,0 +1,41 @@
+.hangman {
+  border: 3px solid black;
+  height: 312px;
+  width: 312px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0px auto;
+}
+
+.wordarea {
+  border: 3px solid red;
+  height: 300px;
+  width: 600px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: yellow;
+}
+
+.tile {
+  border: 2px solid green;
+  height: 100px;
+  width: 100px;
+}
+
+.boardSquare {
+  background: yellow;
+  height: 50px;
+  width: 50px;
+  margin: 20px;
+  border-bottom: 2px solid black;
+}
+
+.boardSquareEmpty {
+  background: yellow;
+  height: 50px;
+  width: 50px;
+  margin: 20px;
+}

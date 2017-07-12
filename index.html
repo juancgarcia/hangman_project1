@@ -3,8 +3,34 @@
   <head>
     <meta charset="utf-8">
     <title>Hangman</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-
+    <div class="topBar">
+      <h1>Hangman Game</h1>
+      <input id='answerInput' type="text" name="phrase to guess" placeholder="Enter word or phrase!">
+      <input id='answerButton' type="button" value="Start!">
+      <input id='guessInput' type="text" name="" placeholder="Enter a letter to guess">
+      <input id='guessButton' type="button" value="Make a guess">
+      <input id='reset' type="button" value="Reset Game">
+    </div>
+    <div class="hangman">
+      <div class="tile" id="1"></div>
+      <div class="tile" id="2"></div>
+      <div class="tile" id="3"></div>
+      <div class="tile" id="4"></div>
+      <div class="tile" id="5"></div>
+      <div class="tile" id="6"></div>
+      <div class="tile" id="7"></div>
+      <div class="tile" id="8"></div>
+      <div class="tile" id="9"></div>
+    </div>
+    <div class="wordarea">
+      <!-- <p>Word area</p> -->
+    </div>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <!-- <script src="script.js" charset="utf-8"></script> -->
+  <script src="hangmanModel.js" charset="utf-8"></script>
+  <script src="hangmanView.js" charset="utf-8"></script>
 </html>
