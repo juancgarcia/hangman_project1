@@ -7,6 +7,7 @@ var guessButton = $('#guessButton')
 var reset = $('#reset')
 var boardSquare = $('<div class="boardSquare"></div>')
 var boardSquareEmpty = $('<div class="boardSquareEmpty"></div>')
+var wrongPip = $('<p>*</p>')
 
 function resetPage () {
   window.location.reload(true)
@@ -34,7 +35,13 @@ function createLetterTitle() {
 }
 
 function correctGuess (a) {
+  console.log('correct guess')
   $('.boardSquare').eq(a).text(answer[a])
+}
+
+function wrongGuess () {
+  console.log('wrong guess')
+  $('.hangman').append(wrongPip.clone())
 }
 
 answerButton.one('click', storeAnswer)
