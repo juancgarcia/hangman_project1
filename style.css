@@ -39,3 +39,11 @@
   width: 50px;
   margin: 20px;
 }
+
+.winCondition {
+  border: 3px solid black;
+  height: 312px;
+  width: 312px;
+  background: green;
+  margin: 0px auto;
+}

@@ -14,7 +14,7 @@ function createBoard () {
     if (answer[i] === ' ') {
       createBlankTile()
     } else {
-      createLetterTitle()
+      createLetterTile()
     }
   }
 }
@@ -31,5 +31,11 @@ function compareGuess () {
   } else {
     wrongGuesses.push(guess)
     wrongGuess ()
+  }
+}
+
+function checkForWin () {
+  if (rightGuesses.length === answer.length) {
+    winNotice ()
   }
 }

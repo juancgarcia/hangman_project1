@@ -8,6 +8,7 @@ var reset = $('#reset')
 var boardSquare = $('<div class="boardSquare"></div>')
 var boardSquareEmpty = $('<div class="boardSquareEmpty"></div>')
 var wrongPip = $('<p>*</p>')
+var winCondition = $('<div class="winCondition"><p>You win!</p></div>')
 
 function resetPage () {
   window.location.reload(true)
@@ -25,12 +26,13 @@ function storeGuess () {
   guess = guessInput.val().toUpperCase()
   guessInput.val('')
   compareGuess ()
+  checkForWin ()
 }
 
-function  createBlankTile () {
+function createBlankTile () {
   $('.wordarea').append(boardSquareEmpty.clone())
 }
-function createLetterTitle() {
+function createLetterTile () {
   $('.wordarea').append(boardSquare.clone())
 }
 
@@ -42,6 +44,10 @@ function correctGuess (a) {
 function wrongGuess () {
   console.log('wrong guess')
   $('.hangman').append(wrongPip.clone())
+}
+
+function winNotice () {
+  $('.hangman').replaceWith(winCondition)
 }
 
 answerButton.one('click', storeAnswer)
