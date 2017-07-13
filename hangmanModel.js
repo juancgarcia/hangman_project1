@@ -7,6 +7,7 @@ var numDiv
 var rightGuesses = []
 var wrongGuesses = []
 var allGuesses = []
+// var uniqueGuesses = allGuesses.filter((v, i, a) => a.indexOf(v) === i)
 
 // determines if a tile should be empty or for a letter
 function createBoard () {
@@ -18,7 +19,7 @@ function createBoard () {
     }
   }
 }
-
+// if (uniqueGuesses.some(x => x === guess) || (guess.length === 1))
 // determines if a guess is right or wrong
 function compareGuess () {
   allGuesses.push(guess)
@@ -59,15 +60,23 @@ function entryValidation (a) {
 
 // validates the guess entries
 function guessValidation () {
+  var unqiueGuesses = allGuesses.filter((v, i, a) => a.indexOf(v) === i)
   if (answer.length !== 0) {
     guess = guessInput.val().toUpperCase()
-    if (entryValidation(guess) === true) {
+    if (entryValidation(guess) === true && guess.length === 1 && uniqueGuess() === true) {
       guessInput.val('')
       compareGuess()
       checkForWin()
     } else {
-      return alert('Letters only, please.')
+      return alert('One letter only, please.')
     }
+  }
+}
+
+function uniqueGuess () {
+  var uniqueGuesses = allGuesses.filter((v, i, a) => a.indexOf(v) === i)
+  if (uniqueGuesses.some(i => i !== guess)) {
+    return true
   }
 }
 

@@ -29,9 +29,12 @@ body {
   width: 300px;
   border: 2px solid black;
   text-align: center;
-  text-decoration: underline;
   display: flex;
   flex-direction: column;
+}
+
+h2  {
+  text-decoration: underline;
 }
 
 #letters {

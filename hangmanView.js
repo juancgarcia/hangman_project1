@@ -101,15 +101,16 @@ function disableNewRandom () {
   randomButton.off('click')
 }
 
-function printGuess () {
-  console.log(guess)
-  $('#letters').append(guess + '  ')
-}
+// function printGuess (a) {
+//   console.log(a)
+//   var i = a.join(' ')
+//   $('#letters').text(i)
+// }
 
 answerButton.on('click', storeAnswer)
 answerButton.on('click', disableNewRandom)
 randomButton.one('click', randomPhrase)
 randomButton.one('click', disableNewAnswer)
 guessButton.on('click', storeGuess)
-guessButton.on('click', printGuess)
+// guessButton.on('click', printGuess)
 reset.on('click', resetPage)
