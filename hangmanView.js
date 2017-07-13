@@ -7,10 +7,10 @@ var guessButton = $('#guessButton')
 var reset = $('#reset')
 var boardSquare = $('<div class="boardSquare"></div>')
 var boardSquareEmpty = $('<div class="boardSquareEmpty"></div>')
-var wrongPip = $('<p>*</p>')
+// var wrongPip = $('<p>*</p>')
 var winCondition = $('<div class="winCondition"><p>You win!</p></div>')
 var randomButton = $('#random')
-var noClick = true
+var alphabet = []
 
 // reload page to reset game
 function resetPage () {
@@ -20,19 +20,32 @@ function resetPage () {
 // stores anwer in a variable and returns input form to empty
 function storeAnswer () {
   ansString = answerInput.val()
-  var tempAnswer = ansString.toUpperCase()
-  answer = tempAnswer.split('')
-  answerInput.val('')
-  numDiv = answer.length
-  createBoard()
+  if (entryValidation(ansString) === true) {
+    var tempAnswer = ansString.toUpperCase()
+    answer = tempAnswer.split('')
+    answerInput.val('')
+    numDiv = answer.length
+    createBoard()
+  } else {
+    return alert('Letters and spaces only, please.')
+  }
 }
 
 // stores a guess from the user
 function storeGuess () {
   guess = guessInput.val().toUpperCase()
-  guessInput.val('')
-  compareGuess()
-  checkForWin()
+  if (entryValidation(guess) === true) {
+    guessInput.val('')
+    compareGuess()
+    checkForWin()
+  } else {
+    return alert('Letters only, please.')
+  }
+}
+
+function entryValidation (a) {
+   var letters = /^[A-Za-z\s]+$/
+   return a.match(letters) ? true : false
 }
 
 //creates a blank (invisible) tile on gameboard
@@ -101,22 +114,17 @@ function storeAnswerRandom (a) {
 
 // disables entering a new answer
 function disableNewAnswer () {
-  // answerButton.prop({disabled: true})
-  noClick = false
+  answerButton.off('click')
 }
 
 // disables the random phrase button
 function disableNewRandom () {
-  // randomButton.prop({disabled: true})
-  noClick = false
+  randomButton.off('click')
 }
 
-while (noClick === true) {
-  answerButton.one('click', storeAnswer)
-  answerButton.one('click', disableNewRandom)
-  randomButton.one('click', randomPhrase)
-  randomButton.one('click', disableNewAnswer)
-}
-
+answerButton.one('click', storeAnswer)
+answerButton.one('click', disableNewRandom)
+randomButton.one('click', randomPhrase)
+randomButton.one('click', disableNewAnswer)
 guessButton.on('click', storeGuess)
 reset.on('click', resetPage)
