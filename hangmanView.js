@@ -19,34 +19,15 @@ function resetPage () {
 
 // stores anwer in a variable and returns input form to empty
 function storeAnswer () {
-  ansString = answerInput.val()
-  if (entryValidation(ansString) === true) {
-    var tempAnswer = ansString.toUpperCase()
-    answer = tempAnswer.split('')
-    answerInput.val('')
-    numDiv = answer.length
-    createBoard()
-  } else {
-    return alert('Letters and spaces only, please.')
-  }
+  answerValidation()
 }
 
 // stores a guess from the user
 function storeGuess () {
-  guess = guessInput.val().toUpperCase()
-  if (entryValidation(guess) === true) {
-    guessInput.val('')
-    compareGuess()
-    checkForWin()
-  } else {
-    return alert('Letters only, please.')
-  }
+  guessValidation()
 }
 
-function entryValidation (a) {
-   var letters = /^[A-Za-z\s]+$/
-   return a.match(letters) ? true : false
-}
+
 
 //creates a blank (invisible) tile on gameboard
 function createBlankTile () {
@@ -84,7 +65,7 @@ function wrongGuess () {
       break
     case 6:
       $('.hangman').css('background-image', 'url("img/Hangman-6.png")')
-      $('.wordarea').text(`You lose! The phrase was ${ansString}.`)
+      $('.wordarea').text(`You lose! The phrase was "${ansString}".`)
       break
   }
 }
@@ -94,7 +75,7 @@ function winNotice () {
   $('.hangman').replaceWith(winCondition)
 }
 
-// alerts the player they lost
+//alerts the player they lost
 // function loseNotice () {
 //   $('.wordarea').text(`You lose! The phrase was ${ansString}.`)
 // }
@@ -105,6 +86,7 @@ function randomPhrase () {
 }
 
 function storeAnswerRandom (a) {
+  ansString = a
   var tempAnswer = a.toUpperCase()
   answer = tempAnswer.split('')
   answerInput.val('')
@@ -122,8 +104,8 @@ function disableNewRandom () {
   randomButton.off('click')
 }
 
-answerButton.one('click', storeAnswer)
-answerButton.one('click', disableNewRandom)
+answerButton.on('click', storeAnswer)
+answerButton.on('click', disableNewRandom)
 randomButton.one('click', randomPhrase)
 randomButton.one('click', disableNewAnswer)
 guessButton.on('click', storeGuess)

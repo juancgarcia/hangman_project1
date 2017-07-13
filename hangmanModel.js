@@ -30,7 +30,6 @@ function compareGuess () {
   } else {
     wrongGuesses.push(guess)
     wrongGuess()
-    checkForLoss()
   }
 }
 
@@ -41,12 +40,6 @@ function checkForWin () {
   }
 }
 
-// checks if the player has lost
-function checkForLoss () {
-  if (wrongGuesses.length === 5) {
-    loseNotice()
-  }
-}
 
 //selects a random phrase as the answer 1394
 function selectRandom () {
@@ -54,4 +47,37 @@ function selectRandom () {
   var randomString = phrases[ind]
   console.log(randomString)
   storeAnswerRandom(randomString)
+}
+
+function entryValidation (a) {
+   var letters = /^[A-Za-z\s]+$/
+   return a.match(letters) ? true : false
+}
+
+function guessValidation () {
+  if (answer.length !== 0) {
+    guess = guessInput.val().toUpperCase()
+    if (entryValidation(guess) === true) {
+      guessInput.val('')
+      compareGuess()
+      checkForWin()
+    } else {
+      return alert('Letters only, please.')
+    }
+  }
+}
+
+function answerValidation () {
+  ansString = answerInput.val()
+    if (answer.length === 0) {
+    if (entryValidation(ansString) === true) {
+      var tempAnswer = ansString.toUpperCase()
+      answer = tempAnswer.split('')
+      answerInput.val('')
+      numDiv = answer.length
+      createBoard()
+    } else {
+      return alert('Letters and spaces only, please.')
+    }
+  }
 }
