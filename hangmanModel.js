@@ -73,6 +73,8 @@ function guessLength () {
     return alert('One letter only, please.')
   } else if (entryValidation(guess) === true){
     uniqueLetter()
+  } else if (entryValidation(guess) === false){
+    return alert('One letter only, please.')
   }
 }
 
@@ -82,6 +84,7 @@ function uniqueLetter () {
     allGuesses.push(guess)
     uniqueGuesses.push(guess)
     compareGuess()
+    printGuess()
     checkForWin()
   }
 }

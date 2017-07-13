@@ -34,7 +34,7 @@ silver:
 *play against computer (random phrase)
 
 gold:
-print guesses
+*print guesses
 time based scoring
 aesthetics
   themes? -> platinum?

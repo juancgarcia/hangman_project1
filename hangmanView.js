@@ -46,6 +46,11 @@ function correctGuess (a) {
   checkForWin()
 }
 
+// alerts the player that they have won
+function winNotice () {
+  $('.hangman').replaceWith(winCondition)
+}
+
 // advances hangman image after wrong answer
 function wrongGuess () {
   var index = wrongGuesses.length
@@ -70,11 +75,6 @@ function wrongGuess () {
       $('.wordarea').text(`You lose! The phrase was "${ansString}".`)
       break
   }
-}
-
-// alerts the player that they have won
-function winNotice () {
-  $('.hangman').replaceWith(winCondition)
 }
 
 // loads a random phrase as the answer
@@ -102,11 +102,11 @@ function disableNewRandom () {
   randomButton.off('click')
 }
 
-// function printGuess (a) {
-//   console.log(a)
-//   var i = a.join(' ')
-//   $('#letters').text(i)
-// }
+function printGuess () {
+  // console.log(a)
+  var i = uniqueGuesses.join(' ')
+  $('#letters').text(i)
+}
 
 answerButton.on('click', storeAnswer)
 answerButton.on('click', disableNewRandom)
