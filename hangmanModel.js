@@ -7,7 +7,7 @@ var numDiv
 var rightGuesses = []
 var wrongGuesses = []
 var allGuesses = []
-// var uniqueGuesses = allGuesses.filter((v, i, a) => a.indexOf(v) === i)
+var uniqueGuesses
 
 // determines if a tile should be empty or for a letter
 function createBoard () {
@@ -38,6 +38,7 @@ function compareGuess () {
 
 // checks if the player has won
 function checkForWin () {
+  var answerWin = answer.join(' ')
   if (rightGuesses.length === answer.length) {
     winNotice()
   }
@@ -60,25 +61,49 @@ function entryValidation (a) {
 
 // validates the guess entries
 function guessValidation () {
-  var unqiueGuesses = allGuesses.filter((v, i, a) => a.indexOf(v) === i)
   if (answer.length !== 0) {
     guess = guessInput.val().toUpperCase()
-    if (entryValidation(guess) === true && guess.length === 1 && uniqueGuess() === true) {
-      guessInput.val('')
-      compareGuess()
-      checkForWin()
-    } else {
-      return alert('One letter only, please.')
-    }
+    guessInput.val('')
+    guessLength()
   }
 }
 
-function uniqueGuess () {
-  var uniqueGuesses = allGuesses.filter((v, i, a) => a.indexOf(v) === i)
-  if (uniqueGuesses.some(i => i !== guess)) {
-    return true
+function guessLength () {
+  if (guess.length !== 1) {
+    return alert('One letter only, please.')
+  } else if (entryValidation(guess) === true){
+    uniqueLetter()
   }
 }
+
+function uniqueLetter () {
+  uniqueGuesses = allGuesses.filter((v, i, a) => a.indexOf(v) === i)
+  if (uniqueGuesses.find(a => a === guess) !== guess) {
+    allGuesses.push(guess)
+    uniqueGuesses.push(guess)
+    compareGuess()
+    checkForWin()
+  }
+}
+//   var unqiueGuesses = allGuesses.filter((v, i, a) => a.indexOf(v) === i)
+//   if (answer.length !== 0) {
+//     guess = guessInput.val().toUpperCase()
+//     if (entryValidation(guess) === true && guess.length === 1 && uniqueGuess() === true) {
+//       guessInput.val('')
+//       compareGuess()
+//       checkForWin()
+//     } else {
+//       return alert('One letter only, please.')
+//     }
+//   }
+// }
+//
+// function uniqueGuess () {
+//   var uniqueGuesses = allGuesses.filter((v, i, a) => a.indexOf(v) === i)
+//   if (uniqueGuesses.some(i => i !== guess)) {
+//     return true
+//   }
+// }
 
 // validates the answer entries
 function answerValidation () {

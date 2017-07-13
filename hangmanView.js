@@ -43,6 +43,7 @@ function createLetterTile () {
 // adds the letter to the gameboard after correct guess
 function correctGuess (a) {
   $('.wordarea').find('div').eq(a).text(answer[a])
+  checkForWin()
 }
 
 // advances hangman image after wrong answer
