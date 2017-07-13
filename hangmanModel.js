@@ -1,4 +1,4 @@
-/* global $ hangmanModel hangmanView*/
+/* global $ hangmanModel hangmanView phrases*/
 
 var ansString = ''
 var answer = []
@@ -7,9 +7,8 @@ var numDiv
 var rightGuesses = []
 var wrongGuesses = []
 
-
+// determines if a tile should be empty or for a letter
 function createBoard () {
-  console.log('working')
   for (var i = 0; i < numDiv; i++) {
     if (answer[i] === ' ') {
       createBlankTile()
@@ -19,7 +18,7 @@ function createBoard () {
   }
 }
 
-
+// determines if a guess is right or wrong
 function compareGuess () {
   if (answer.some(x => x === guess)) {
     for (var i = 0; i < answer.length; i++) {
@@ -30,19 +29,29 @@ function compareGuess () {
     }
   } else {
     wrongGuesses.push(guess)
-    wrongGuess ()
-    checkForLoss ()
+    wrongGuess()
+    checkForLoss()
   }
 }
 
+// checks if the player has won
 function checkForWin () {
   if (rightGuesses.length === answer.length) {
-    winNotice ()
+    winNotice()
   }
 }
 
+// checks if the player has lost
 function checkForLoss () {
   if (wrongGuesses.length === 5) {
-    loseNotice ()
+    loseNotice()
   }
+}
+
+//selects a random phrase as the answer 1394
+function selectRandom () {
+  var ind = Math.floor(Math.random() * 1392)
+  var randomString = phrases[ind]
+  console.log(randomString)
+  storeAnswerRandom(randomString)
 }

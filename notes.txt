@@ -22,14 +22,14 @@ return incorrect guesses as hangman
 
 bronze:
 *take input phrase
-store input phrase
-take guesses
-store guesses
-represent correct guesses
-represent wrong guesses
+*store input phrase
+*take guesses
+*store guesses
+*represent correct guesses
+*represent wrong guesses
 
 silver:
-graphical representation of the hangman
+*graphical representation of the hangman
 *reset button
 play against computer (random phrase)
 

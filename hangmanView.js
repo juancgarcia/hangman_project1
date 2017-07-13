@@ -1,4 +1,4 @@
-/* global $ hangmanModel hangmanView*/
+/* global $ hangmanModel hangmanView phrases*/
 
 var answerInput = $('#answerInput')
 var answerButton = $('#answerButton')
@@ -9,41 +9,49 @@ var boardSquare = $('<div class="boardSquare"></div>')
 var boardSquareEmpty = $('<div class="boardSquareEmpty"></div>')
 var wrongPip = $('<p>*</p>')
 var winCondition = $('<div class="winCondition"><p>You win!</p></div>')
+var randomButton = $('#random')
 
+// reload page to reset game
 function resetPage () {
   window.location.reload(true)
 }
 
+// stores anwer in a variable and returns input form to empty
 function storeAnswer () {
   ansString = answerInput.val()
   var tempAnswer = ansString.toUpperCase()
   answer = tempAnswer.split('')
   answerInput.val('')
   numDiv = answer.length
+  createBoard()
 }
 
+// stores a guess from the user
 function storeGuess () {
   guess = guessInput.val().toUpperCase()
   guessInput.val('')
-  compareGuess ()
-  checkForWin ()
+  compareGuess()
+  checkForWin()
 }
 
+//creates a blank (invisible) tile on gameboard
 function createBlankTile () {
   $('.wordarea').append(boardSquareEmpty.clone())
 }
+
+// creates a tile on the gameboard for a letter
 function createLetterTile () {
   $('.wordarea').append(boardSquare.clone())
 }
 
+// adds the letter to the gameboard after correct guess
 function correctGuess (a) {
-  console.log('correct guess')
-  $('.boardSquare').eq(a).text(answer[a])
+  $('.wordarea').find('div').eq(a).text(answer[a])
 }
 
+// advances hangman image after wrong answer
 function wrongGuess () {
   var index = wrongGuesses.length
-  console.log(index)
   switch (index) {
     case 1:
       $('.hangman').css('background-image', 'url("img/Hangman-1.png")')
@@ -67,15 +75,42 @@ function wrongGuess () {
   }
 }
 
+// alerts the player that they have won
 function winNotice () {
   $('.hangman').replaceWith(winCondition)
 }
 
-function loseNotice () {
-  console.log('lose')
+// alerts the player they lost
+// function loseNotice () {
+//   $('.wordarea').text(`You lose! The phrase was ${ansString}.`)
+// }
+
+// loads a random phrase as the answer
+function randomPhrase () {
+  selectRandom()
+}
+
+function storeAnswerRandom (a) {
+  var tempAnswer = a.toUpperCase()
+  answer = tempAnswer.split('')
+  answerInput.val('')
+  numDiv = answer.length
+  createBoard()
+}
+
+// disables entering a new answer
+function disableNewAnswer () {
+  answerButton.prop({disabled: true})
+}
+
+// disables the random phrase button
+function disableNewRandom () {
+  randomButton.prop({disabled: true})
 }
 
 answerButton.one('click', storeAnswer)
-answerButton.one('click', createBoard)
+answerButton.one('click', disableNewRandom)
 guessButton.on('click', storeGuess)
+randomButton.one('click', randomPhrase)
+randomButton.one('click', disableNewAnswer)
 reset.on('click', resetPage)
