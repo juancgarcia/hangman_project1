@@ -7,10 +7,11 @@ var guessButton = $('#guessButton')
 var reset = $('#reset')
 var boardSquare = $('<div class="boardSquare"></div>')
 var boardSquareEmpty = $('<div class="boardSquareEmpty"></div>')
-// var wrongPip = $('<p>*</p>')
 var winCondition = $('<div class="winCondition"><p>You win!</p></div>')
 var randomButton = $('#random')
 var alphabet = []
+var printOfGuess = $('<div class="printGuess"></div>')
+var guessArea = $('guessedLetters')
 
 // reload page to reset game
 function resetPage () {
@@ -75,16 +76,12 @@ function winNotice () {
   $('.hangman').replaceWith(winCondition)
 }
 
-//alerts the player they lost
-// function loseNotice () {
-//   $('.wordarea').text(`You lose! The phrase was ${ansString}.`)
-// }
-
 // loads a random phrase as the answer
 function randomPhrase () {
   selectRandom()
 }
 
+// stores random answer
 function storeAnswerRandom (a) {
   ansString = a
   var tempAnswer = a.toUpperCase()
@@ -104,9 +101,15 @@ function disableNewRandom () {
   randomButton.off('click')
 }
 
+function printGuess () {
+  console.log(guess)
+  $('#letters').append(guess + '  ')
+}
+
 answerButton.on('click', storeAnswer)
 answerButton.on('click', disableNewRandom)
 randomButton.one('click', randomPhrase)
 randomButton.one('click', disableNewAnswer)
 guessButton.on('click', storeGuess)
+guessButton.on('click', printGuess)
 reset.on('click', resetPage)

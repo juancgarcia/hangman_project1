@@ -6,6 +6,7 @@ var guess = []
 var numDiv
 var rightGuesses = []
 var wrongGuesses = []
+var allGuesses = []
 
 // determines if a tile should be empty or for a letter
 function createBoard () {
@@ -20,6 +21,7 @@ function createBoard () {
 
 // determines if a guess is right or wrong
 function compareGuess () {
+  allGuesses.push(guess)
   if (answer.some(x => x === guess)) {
     for (var i = 0; i < answer.length; i++) {
       if (answer[i] === guess) {
@@ -49,11 +51,13 @@ function selectRandom () {
   storeAnswerRandom(randomString)
 }
 
+// validates entry is letts or spaces
 function entryValidation (a) {
    var letters = /^[A-Za-z\s]+$/
    return a.match(letters) ? true : false
 }
 
+// validates the guess entries
 function guessValidation () {
   if (answer.length !== 0) {
     guess = guessInput.val().toUpperCase()
@@ -67,6 +71,7 @@ function guessValidation () {
   }
 }
 
+// validates the answer entries
 function answerValidation () {
   ansString = answerInput.val()
     if (answer.length === 0) {

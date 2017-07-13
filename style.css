@@ -1,27 +1,49 @@
 body {
   font-family: 'Poppins', 'Arial', sans-serif;
   background: #deeaee;
+  display: flex;
+  flex-direction: column;
+}
+
+.gameArea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .hangman {
-  /*border: 3px solid black;*/
-  height: 312px;
-  width: 312px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0px auto;
-  margin-bottom: 50px;
+  height: 400px;
+  width: 300px;
+  /*margin: 0px auto;*/
+  /*margin-bottom: 50px;*/
   background-image: url("img/Hangman-0.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #deeaee
+  background-color: #deeaee;
+  border: 2px solid black;
+}
+
+.guessedLetters {
+  height: 400px;
+  width: 300px;
+  border: 2px solid black;
+  text-align: center;
+  text-decoration: underline;
+  display: flex;
+  flex-direction: column;
+}
+
+#letters {
+  /*border: 2px solid black;
+  height: 10px;
+  width: 10px;*/
 }
 
 .wordarea {
   border: 3px solid red;
-  height: 200px;
-  width: 750px;
+  height: 400px;
+  width: 500px;
   margin: 0px auto;
   display: flex;
   flex-direction: row;
@@ -38,8 +60,8 @@ body {
 
 .boardSquare {
   background: yellow;
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   margin: 5px;
   border-bottom: 2px solid black;
   text-align: center;
@@ -48,7 +70,7 @@ body {
 
 .boardSquareEmpty {
   background: yellow;
-  height: 20px;
+  height: 30px;
   width: auto;
   margin: 5px;
 }
