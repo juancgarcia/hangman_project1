@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   </head>
   <body>
-    <div class="topBar">
+    <header>
       <h1>Hangman Game</h1>
-    </div>
+    </header>
     <div class="buttonBar">
       <div class="answer">
         <input class='button' id='answerInput' type="text" name="phrase to guess" placeholder="Enter word or phrase!">
@@ -27,12 +27,20 @@
     </div>
     <div class="gameArea">
       <div class="hangman"></div>
-      <div class="wordarea"></div>
+      <div class="instructions">
+        <h3>Instructions</h3>
+        <p>Welcome to Hangman!</p>
+        <p>Enter a word or phrase and press "Start!" to begin a new game</p>
+        <p>Press "Random" to use a random phrase.</p>
+        <p>Use "Guess!" to guess a letter in the phrase.</p>
+        <p>"Reset" will reset the game.</p>
+      </div>
       <div class="guessedLetters">
         <h2>Guessed Letters</h2>
         <h3 id='letters'></h3>
       </div>
   </div>
+  <footer></footer>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   <script src="hangmanModel.js" charset="utf-8"></script>
