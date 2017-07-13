@@ -10,6 +10,7 @@ var boardSquareEmpty = $('<div class="boardSquareEmpty"></div>')
 var wrongPip = $('<p>*</p>')
 var winCondition = $('<div class="winCondition"><p>You win!</p></div>')
 var randomButton = $('#random')
+var noClick = true
 
 // reload page to reset game
 function resetPage () {
@@ -100,17 +101,22 @@ function storeAnswerRandom (a) {
 
 // disables entering a new answer
 function disableNewAnswer () {
-  answerButton.prop({disabled: true})
+  // answerButton.prop({disabled: true})
+  noClick = false
 }
 
 // disables the random phrase button
 function disableNewRandom () {
-  randomButton.prop({disabled: true})
+  // randomButton.prop({disabled: true})
+  noClick = false
 }
 
-answerButton.one('click', storeAnswer)
-answerButton.one('click', disableNewRandom)
+while (noClick === true) {
+  answerButton.one('click', storeAnswer)
+  answerButton.one('click', disableNewRandom)
+  randomButton.one('click', randomPhrase)
+  randomButton.one('click', disableNewAnswer)
+}
+
 guessButton.on('click', storeGuess)
-randomButton.one('click', randomPhrase)
-randomButton.one('click', disableNewAnswer)
 reset.on('click', resetPage)

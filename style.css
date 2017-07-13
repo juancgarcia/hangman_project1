@@ -1,25 +1,33 @@
+body {
+  font-family: 'Poppins', 'Arial', sans-serif;
+  background: #deeaee;
+}
+
 .hangman {
-  border: 3px solid black;
+  /*border: 3px solid black;*/
   height: 312px;
   width: 312px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0px auto;
+  margin-bottom: 50px;
   background-image: url("img/Hangman-0.png");
   background-repeat: no-repeat;
   background-position: center;
+  background-color: #deeaee
 }
 
 .wordarea {
   border: 3px solid red;
-  height: 300px;
-  width: 600px;
+  height: 200px;
+  width: 750px;
   margin: 0px auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background: yellow;
+  background: #deeaee;
+  padding: 20px;
 }
 
 .tile {
@@ -30,23 +38,119 @@
 
 .boardSquare {
   background: yellow;
-  height: 50px;
-  width: 50px;
-  margin: 20px;
+  height: 20px;
+  width: 20px;
+  margin: 5px;
   border-bottom: 2px solid black;
+  text-align: center;
+  font-family:
 }
 
 .boardSquareEmpty {
   background: yellow;
-  height: 50px;
-  width: 50px;
-  margin: 20px;
+  height: 20px;
+  width: auto;
+  margin: 5px;
 }
 
 .winCondition {
-  border: 3px solid black;
+  /*border: 3px solid black;*/
   height: 312px;
   width: 312px;
-  background: green;
+  background: #b1cbbb;
   margin: 0px auto;
+  margin: 0px auto;
+  margin-bottom: 50px;
+  background-color: #deeaee;
+  font-size: 50px;
+  text-align: center;
+  line-height: 50%;
+}
+
+.button {
+  font-family: 'Poppins', 'Arial', sans-serif;
+  font-size: 20px;
+  height: 40px;
+  width: 130px;
+  display: inline;
+  text-align: center;
+  line-height: 38%;
+  margin: auto;
+}
+
+.topBar {
+  height: 40px;
+  /*background: grey;*/
+  /*display: flex;
+  flex-direction: row;*/
+  margin-bottom: 10px;
+  margin-top: 40px;
+  /*padding-right: 10%;*/
+}
+
+h1 {
+  display: inline;
+  line-height: 15px;
+  margin: auto 10px;
+  flex-grow: 1.5;
+}
+
+.buttonBar {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.answer {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#answerButton {
+  background:  #b1cbbb;
+  border: 3px solid #b1cbbb;
+}
+
+#answerInput {
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.guess {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#guessButton {
+  background: #eea29a;
+  border: 3px solid #eea29a;
+}
+
+#guessInput {
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.other {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#reset {
+  background: #c94c4c;
+}
+
+#random {
+  background: #b1cbbb
 }

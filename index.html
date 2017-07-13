@@ -4,16 +4,26 @@
     <meta charset="utf-8">
     <title>Hangman</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   </head>
   <body>
     <div class="topBar">
       <h1>Hangman Game</h1>
-      <input id='answerInput' type="text" name="phrase to guess" placeholder="Enter word or phrase!">
-      <input id='answerButton' type="button" value="Start!">
-      <input id='guessInput' type="text" name="" placeholder="Enter a letter to guess">
-      <input id='guessButton' type="button" value="Make a guess">
-      <input id='reset' type="button" value="Reset Game">
-      <input id='random' type="button" value="Random Phrase">
+    </div>
+    <div class="buttonBar">
+      <div class="answer">
+        <input class='button' id='answerInput' type="text" name="phrase to guess" placeholder="Enter word or phrase!">
+        <div class="button" id='answerButton'><p>Start!</p></div>
+        <!-- <input id='answerButton' class="button" type="button" value="Start!"> -->
+      </div>
+      <div class="guess">
+        <input class='button' id='guessInput' type="text" name="" placeholder="Enter a letter to guess">
+        <div class="button" id='guessButton'><p>Guess!</p></div>
+      </div>
+      <div class="other">
+        <div class="button" id='reset'><p>Reset</p></div>
+        <div class="button" id='random'><p>Random</p></div>
+      </div>
     </div>
     <div class="hangman">
     </div>
