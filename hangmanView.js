@@ -77,7 +77,7 @@ function wrongGuess () {
     case 6:
       $('.hangman').css('background-image', 'url("img/Hangman-6.png")')
       $('.wordarea').replaceWith(loseCondition)
-      loseCondition.append(`<p class='loseMessage'>The word was "${ansString}".</p>`)
+      loseCondition.append(`<p class='loseMessage'>The answer was "${ansString}".</p>`)
       break
   }
 }

@@ -115,11 +115,10 @@ h2  {
   /*border: 3px solid black;*/
   height: 300px;
   width: 400px;
-  background: green;
   margin: 0px auto;
   margin: 0px auto;
   margin-bottom: 50px;
-  background-color: green;
+  background-color: #51E57A;
   font-size: 50px;
   text-align: center;
   line-height: 50%;
@@ -133,11 +132,10 @@ h2  {
 .loseCondition {
   height: 300px;
   width: 400px;
-  background: red;
+  background-color: #FA5C1A;
   margin: 0px auto;
   margin: 0px auto;
   margin-bottom: 50px;
-  background-color: red;
   font-size: 50px;
   text-align: center;
   line-height: 50%;
