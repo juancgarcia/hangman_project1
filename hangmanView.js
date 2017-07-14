@@ -15,6 +15,11 @@ var printOfGuess = $('<div class="printGuess"></div>')
 var guessArea = $('guessedLetters')
 var instructions = $('.instructions')
 var wordarea = $('<div class="wordarea"></div>')
+var theme1 = $('#Theme1')
+var theme2 = $('#Theme2')
+var theme3 = $('#Theme3')
+var theme4 = $('#Theme4')
+var css = $('#sheetStyle')
 
 // reload page to reset game
 function resetPage () {
@@ -118,6 +123,23 @@ function removeInstructions () {
   instructions.replaceWith(wordarea)
 }
 
+// functions for changing the theme
+function switchTheme1 () {
+  $('#sheetStyle').attr('href', 'style.css')
+}
+
+function switchTheme2 () {
+  $('#sheetStyle').attr('href', 'style2.css')
+}
+
+function switchTheme3 () {
+  $('#sheetStyle').attr('href', 'style3.css')
+}
+
+function switchTheme4 () {
+  $('#sheetStyle').attr('href', 'style4.css')
+}
+
 // event listeners
 answerButton.one('click', removeInstructions)
 answerButton.one('click', storeAnswer)
@@ -128,5 +150,10 @@ randomButton.one('click', randomPhrase)
 randomButton.one('click', disableNewAnswer)
 
 guessButton.on('click', storeGuess)
-// guessButton.on('click', printGuess)
+
 reset.on('click', resetPage)
+
+theme1.on('click', switchTheme1)
+theme2.on('click', switchTheme2)
+theme3.on('click', switchTheme3)
+theme4.on('click', switchTheme4)

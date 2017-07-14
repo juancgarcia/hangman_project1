@@ -17,7 +17,7 @@ footer {
   flex-direction: row;
   justify-content: space-around;
   line-height: 100%;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .themeButton {
@@ -39,18 +39,19 @@ footer {
 }
 
 #Theme2 {
-  background-color: blue;
+  background-color: rgba(197, 203, 211, 1);
   line-height: 1%;
 }
 
 #Theme3 {
-  background-color: green;
+  background-color: rgba(252, 215, 87, 1);
   line-height: 1%;
 }
 
 #Theme4 {
-  background-color: yellow;
+  background-color: rgba(111, 104, 102, 1);
   line-height: 1%;
+  color: white;
 }
 
 header {
