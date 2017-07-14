@@ -10,20 +10,30 @@ store guesses
 represent correct guesses
 represent wrong guesses
 
+user stories:
+1. as a player, i want to be able to enter a phrase so that i can play against a friend
+2. as a player i want to be able to guess letters so that i can try to win
+
+
 silver:
 graphical representation of the hangman
 reset button
 play against computer (random phrase)
 
+user stories:
+1. as a player i want to see the hangman being hung so that i know how close i am to losing
+2. as a player, i want to be able to play against a random phrase so i can play alone
+3. as a player i want to be able to reset the game so that i can play multiple times
+
 gold:
 print guesses
-time based scoring
 aesthetics
-themes? -> platinum?
-
+themes?
 
 user stories
-any white boarding, unsolved problems
+1. as a player i want to see which letters i have guesses so that i dont repeat letters
+
+unsolved problems: lines don't always break correctly in the game board.  Time based scoring.
 
 inputs:
 word/phrase to guess
