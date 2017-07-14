@@ -12,6 +12,8 @@ var randomButton = $('#random')
 var alphabet = []
 var printOfGuess = $('<div class="printGuess"></div>')
 var guessArea = $('guessedLetters')
+var instructions = $('.instructions')
+var wordarea = $('<div class="wordarea"></div>')
 
 // reload page to reset game
 function resetPage () {
@@ -108,8 +110,14 @@ function printGuess () {
   $('#letters').text(i)
 }
 
+function removeInstructions () {
+  instructions.replaceWith(wordarea)
+}
+
+answerButton.on('click', removeInstructions)
 answerButton.on('click', storeAnswer)
 answerButton.on('click', disableNewRandom)
+randomButton.on('click', removeInstructions)
 randomButton.one('click', randomPhrase)
 randomButton.one('click', disableNewAnswer)
 guessButton.on('click', storeGuess)
