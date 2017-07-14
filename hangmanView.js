@@ -52,6 +52,7 @@ function correctGuess (a) {
 // alerts the player that they have won
 function winNotice () {
   $('.wordarea').replaceWith(winCondition)
+  // winCondition.append(`<p class='winMessage'>The word was "${ansString}".</p>`)
 }
 
 // advances hangman image after wrong answer
@@ -76,6 +77,7 @@ function wrongGuess () {
     case 6:
       $('.hangman').css('background-image', 'url("img/Hangman-6.png")')
       $('.wordarea').replaceWith(loseCondition)
+      loseCondition.append(`<p class='loseMessage'>The word was "${ansString}".</p>`)
       break
   }
 }

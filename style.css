@@ -125,6 +125,11 @@ h2  {
   line-height: 50%;
 }
 
+.winMessage {
+  font-size: 18px;
+  text-align: center;
+}
+
 .loseCondition {
   height: 300px;
   width: 400px;
@@ -136,6 +141,11 @@ h2  {
   font-size: 50px;
   text-align: center;
   line-height: 50%;
+}
+
+.loseMessage {
+  font-size: 18px;
+  text-align: center;
 }
 
 .button {
