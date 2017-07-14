@@ -36,7 +36,7 @@ silver:
 gold:
 *print guesses
 time based scoring
-aesthetics
+*aesthetics
   themes? -> platinum?
 
 store answer as array

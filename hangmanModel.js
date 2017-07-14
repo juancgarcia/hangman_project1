@@ -19,7 +19,7 @@ function createBoard () {
     }
   }
 }
-// if (uniqueGuesses.some(x => x === guess) || (guess.length === 1))
+
 // determines if a guess is right or wrong
 function compareGuess () {
   allGuesses.push(guess)
@@ -27,7 +27,7 @@ function compareGuess () {
     for (var i = 0; i < answer.length; i++) {
       if (answer[i] === guess) {
         rightGuesses.push(guess)
-        correctGuess (i)
+        correctGuess(i)
       }
     }
   } else {
@@ -38,8 +38,8 @@ function compareGuess () {
 
 // checks if the player has won
 function checkForWin () {
-  var answerWin = answer.join(' ')
-  if (rightGuesses.length === answer.length) {
+  var answerWin = answer.join('').split(' ').join('')
+  if (rightGuesses.length === answerWin.length) {
     winNotice()
   }
 }
@@ -49,7 +49,6 @@ function checkForWin () {
 function selectRandom () {
   var ind = Math.floor(Math.random() * 1392)
   var randomString = phrases[ind]
-  console.log(randomString)
   storeAnswerRandom(randomString)
 }
 
@@ -88,25 +87,6 @@ function uniqueLetter () {
     checkForWin()
   }
 }
-//   var unqiueGuesses = allGuesses.filter((v, i, a) => a.indexOf(v) === i)
-//   if (answer.length !== 0) {
-//     guess = guessInput.val().toUpperCase()
-//     if (entryValidation(guess) === true && guess.length === 1 && uniqueGuess() === true) {
-//       guessInput.val('')
-//       compareGuess()
-//       checkForWin()
-//     } else {
-//       return alert('One letter only, please.')
-//     }
-//   }
-// }
-//
-// function uniqueGuess () {
-//   var uniqueGuesses = allGuesses.filter((v, i, a) => a.indexOf(v) === i)
-//   if (uniqueGuesses.some(i => i !== guess)) {
-//     return true
-//   }
-// }
 
 // validates the answer entries
 function answerValidation () {

@@ -7,7 +7,8 @@ var guessButton = $('#guessButton')
 var reset = $('#reset')
 var boardSquare = $('<div class="boardSquare"></div>')
 var boardSquareEmpty = $('<div class="boardSquareEmpty"></div>')
-var winCondition = $('<div class="winCondition"><p>You win!</p></div>')
+var winCondition = $('<div class="winCondition"><p>You Win!</p></div>')
+var loseCondition = $('<div class="loseCondition"><p>You Lose!</p></div>')
 var randomButton = $('#random')
 var alphabet = []
 var printOfGuess = $('<div class="printGuess"></div>')
@@ -50,7 +51,7 @@ function correctGuess (a) {
 
 // alerts the player that they have won
 function winNotice () {
-  $('.hangman').replaceWith(winCondition)
+  $('.wordarea').replaceWith(winCondition)
 }
 
 // advances hangman image after wrong answer
@@ -74,7 +75,7 @@ function wrongGuess () {
       break
     case 6:
       $('.hangman').css('background-image', 'url("img/Hangman-6.png")')
-      $('.wordarea').text(`You lose! The phrase was "${ansString}".`)
+      $('.wordarea').replaceWith(loseCondition)
       break
   }
 }
@@ -104,22 +105,26 @@ function disableNewRandom () {
   randomButton.off('click')
 }
 
+// prints guesses letter
 function printGuess () {
-  // console.log(a)
   var i = uniqueGuesses.join(' ')
   $('#letters').text(i)
 }
 
+// removes instructions that are 'covering' the gameboard
 function removeInstructions () {
   instructions.replaceWith(wordarea)
 }
 
-answerButton.on('click', removeInstructions)
-answerButton.on('click', storeAnswer)
-answerButton.on('click', disableNewRandom)
-randomButton.on('click', removeInstructions)
+// event listeners
+answerButton.one('click', removeInstructions)
+answerButton.one('click', storeAnswer)
+answerButton.one('click', disableNewRandom)
+
+randomButton.one('click', removeInstructions)
 randomButton.one('click', randomPhrase)
 randomButton.one('click', disableNewAnswer)
+
 guessButton.on('click', storeGuess)
 // guessButton.on('click', printGuess)
 reset.on('click', resetPage)
