@@ -1,6 +1,6 @@
 body {
   font-family: 'Poppins', 'Arial', sans-serif;
-  background: rgba(232, 226, 219, 1);
+  background: rgba(197, 203, 211, 1);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -11,8 +11,46 @@ footer {
   position: fixed;
   left:0px;
   bottom:0px;
-  height:60px;
+  height:70px;
   width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  line-height: 100%;
+  text-decoration: underline;
+}
+
+.themeButton {
+  border: 1px solid rgba(60, 60, 60, 1);
+  height: 35px;
+  width: 90px;
+  margin-top: 10px;
+  color: grey;
+  text-align: center;
+}
+
+.themeButton:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+#Theme1 {
+  background-color: rgba(197, 203, 211, 1);
+  line-height: 1%;
+}
+
+#Theme2 {
+  background-color: blue;
+  line-height: 1%;
+}
+
+#Theme3 {
+  background-color: green;
+  line-height: 1%;
+}
+
+#Theme4 {
+  background-color: yellow;
+  line-height: 1%;
 }
 
 header {
@@ -47,7 +85,7 @@ h1 {
   background-image: url("img/Hangman-0.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(232, 226, 219, 1);
+  background-color: rgba(197, 203, 211, 1);
 }
 
 .guessedLetters {
@@ -84,7 +122,7 @@ h2  {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background: rgba(232, 226, 219, 1);
+  background: rgba(197, 203, 211, 1);
   padding: 20px;
 }
 
@@ -115,27 +153,35 @@ h2  {
   /*border: 3px solid black;*/
   height: 300px;
   width: 400px;
-  background: green;
   margin: 0px auto;
   margin: 0px auto;
   margin-bottom: 50px;
-  background-color: green;
+  background-color: #51E57A;
   font-size: 50px;
   text-align: center;
   line-height: 50%;
 }
 
+.winMessage {
+  font-size: 18px;
+  text-align: center;
+}
+
 .loseCondition {
   height: 300px;
   width: 400px;
-  background: red;
+  background-color: #FA5C1A;
   margin: 0px auto;
   margin: 0px auto;
   margin-bottom: 50px;
-  background-color: red;
   font-size: 50px;
   text-align: center;
   line-height: 50%;
+}
+
+.loseMessage {
+  font-size: 18px;
+  text-align: center;
 }
 
 .button {
@@ -175,8 +221,8 @@ h2  {
 }
 
 #answerButton {
-  background: rgba(244, 208, 111, 1);
-  border: 3px solid rgba(244, 208, 111, 1);
+  background: rgba(221, 164, 72, 1);
+  border: 3px solid rgba(221, 164, 72, 1);
 }
 
 #answerInput {
@@ -192,8 +238,8 @@ h2  {
 }
 
 #guessButton {
-  background: rgba(244, 208, 111, 1);
-  border: 3px solid rgba(244, 208, 111, 1);
+  background: rgba(221, 164, 72, 1);
+  border: 3px solid rgba(221, 164, 72, 1);
 }
 
 #guessInput {
