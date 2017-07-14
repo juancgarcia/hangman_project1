@@ -12,7 +12,11 @@ var uniqueGuesses
 // determines if a tile should be empty or for a letter
 function createBoard () {
   for (var i = 0; i < numDiv; i++) {
-    if (answer[i] === ' ') {
+    if (answer[i] === ' ' && answer.length > 15 && i >= 10) {
+      createBreak()
+    // } else if (answer[i] !== ' ' && i > 10 && answer.legnth - i > 5) {
+    //   createBreak()
+    } else if (answer[i] === ' ') {
       createBlankTile()
     } else {
       createLetterTile()

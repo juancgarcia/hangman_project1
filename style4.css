@@ -126,7 +126,7 @@ h2  {
 .wordarea {
   /*border: 3px solid red;*/
   height: 400px;
-  width: 500px;
+  width: 600px;
   margin: 0px auto;
   display: flex;
   flex-direction: row;

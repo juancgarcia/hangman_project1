@@ -20,6 +20,7 @@ var theme2 = $('#Theme2')
 var theme3 = $('#Theme3')
 var theme4 = $('#Theme4')
 var css = $('#sheetStyle')
+var lineBreak = $('<div class="lineBreak"></div>')
 
 // reload page to reset game
 function resetPage () {
@@ -46,6 +47,11 @@ function createBlankTile () {
 // creates a tile on the gameboard for a letter
 function createLetterTile () {
   $('.wordarea').append(boardSquare.clone())
+}
+
+function createBreak () {
+  // $('.wordarea').append(boardSquareEmpty.clone())
+  $('.wordarea').append(lineBreak.clone())
 }
 
 // adds the letter to the gameboard after correct guess
