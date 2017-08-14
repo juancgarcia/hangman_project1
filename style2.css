@@ -1,225 +1,32 @@
 body {
-  font-family: 'Poppins', 'Arial', sans-serif;
   background: rgba(197, 203, 211, 1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 }
 
 footer {
   background-color: rgba(140, 188, 185, 1);
-  position: fixed;
-  left:0px;
-  bottom:0px;
-  height:70px;
-  width:100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  line-height: 100%;
-  text-decoration: none;
-}
-
-.themeButton {
-  border: 1px solid rgba(60, 60, 60, 1);
-  height: 35px;
-  width: 90px;
-  margin-top: 10px;
-  color: grey;
-  text-align: center;
-  text-decoration: none;
-}
-
-.themeButton:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
-
-#Theme1 {
-  background-color: rgba(232, 226, 219, 1);
-  line-height: 1%;
-}
-
-#Theme2 {
-  background-color: rgba(197, 203, 211, 1);
-  line-height: 1%;
-}
-
-#Theme3 {
-  background-color: rgba(252, 215, 87, 1);
-  line-height: 1%;
-}
-
-#Theme4 {
-  background-color: rgba(111, 104, 102, 1);
-  line-height: 1%;
-  color: white;
 }
 
 header {
   background: rgba(140, 188, 185, 1);
-  position: fixed;
-  left:0px;
-  top:0px;
-  height:140px;
-  width:100%;
-  line-height: 75px;
-  padding-left: 20px;
-}
-
-h1 {
-  display: inline;
-  /*line-height: 50%;*/
-  /*margin: auto 10px;*/
-}
-
-.gameArea {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 .hangman {
-  height: 400px;
-  width: 300px;
-  background-image: url("img/Hangman-0.png");
-  background-repeat: no-repeat;
-  background-position: center;
   background-color: rgba(197, 203, 211, 1);
-}
-
-.guessedLetters {
-  height: 400px;
-  width: 300px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-}
-
-h2  {
-  text-decoration: underline;
-}
-
-#letters {
-  font-size: 28px;
 }
 
 .instructions {
   background: rgba(141, 106, 159, .9);
   color: white;
-  height: 400px;
-  width: 500px;
-  font-size: 18px;
-  padding: 20px;
   box-shadow:    0px 0px 3px 6px rgba(141, 106, 159, .9);
 }
 
 .wordarea {
-  /*border: 3px solid red;*/
-  height: 400px;
-  width: 500px;
-  margin: 0px auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   background: rgba(197, 203, 211, 1);
-  padding: 20px;
-}
-
-.tile {
-  border: 2px solid green;
-  height: 100px;
-  width: 100px;
 }
 
 .boardSquare {
   background: rgba(140, 188, 185, .2);
-  height: 30px;
-  width: 30px;
-  margin: 5px;
   border-bottom: 2px solid rgba(141, 106, 159, 1);
-  text-align: center;
-  font-family:
-}
-
-.boardSquareEmpty {
-  background: yellow;
-  height: 30px;
-  width: auto;
-  margin: 15px;
-}
-
-.winCondition {
-  /*border: 3px solid black;*/
-  height: 300px;
-  width: 400px;
-  margin: 0px auto;
-  margin: 0px auto;
-  margin-bottom: 50px;
-  background-color: #51E57A;
-  font-size: 50px;
-  text-align: center;
-  line-height: 50%;
-}
-
-.winMessage {
-  font-size: 18px;
-  text-align: center;
-}
-
-.loseCondition {
-  height: 300px;
-  width: 400px;
-  background-color: #FA5C1A;
-  margin: 0px auto;
-  margin: 0px auto;
-  margin-bottom: 50px;
-  font-size: 50px;
-  text-align: center;
-  line-height: 50%;
-}
-
-.loseMessage {
-  font-size: 18px;
-  text-align: center;
-}
-
-.button {
-  font-family: 'Poppins', 'Arial', sans-serif;
-  font-size: 20px;
-  height: 40px;
-  width: 130px;
-  display: inline;
-  text-align: center;
-  line-height: 38%;
-  margin: auto;
-  /*box-shadow:    4px 4px 3px 1px #666;*/
-}
-
-.button:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
-}
-
-.buttonBar {
-  height: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  width: 90%;
-  margin: auto;
-  margin-top: 70px;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.answer {
-  height: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
 #answerButton {
@@ -227,45 +34,18 @@ h2  {
   border: 3px solid rgba(221, 164, 72, 1);
 }
 
-#answerInput {
-  font-size: 12px;
-  line-height: 150%;
-}
-
-.guess {
-  height: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
 #guessButton {
   background: rgba(221, 164, 72, 1);
   border: 3px solid rgba(221, 164, 72, 1);
 }
 
-#guessInput {
-  font-size: 12px;
-  line-height: 150%;
-}
-
-.other {
-  height: 60px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 #reset {
   background: rgba(187, 52, 47, 1);
   border: 3px solid rgba(187, 52, 47, 1);
-  margin-right: 10px;
   color: black;
 }
 
 #random {
   background: rgba(141, 106, 159, 1);
   border: 3px solid rgba(141, 106, 159, 1);
-  margin-left: 10px;
-  color: white;
 }

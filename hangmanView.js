@@ -25,16 +25,17 @@ var css = $('#sheetStyle')
 function resetPage () {
   window.location.reload(true)
 }
-
+//// Unnecessary wrapper function, just call answerValidation() directly
 // stores anwer in a variable and returns input form to empty
-function storeAnswer () {
-  answerValidation()
-}
+// function storeAnswer () {
+//   answerValidation()
+// }
 
+//// Unnecessary wrapper function, just call guessValidation() directly
 // stores a guess from the user
-function storeGuess () {
-  guessValidation()
-}
+// function storeGuess () {
+//   guessValidation()
+// }
 
 
 
@@ -87,10 +88,11 @@ function wrongGuess () {
   }
 }
 
+//// Unnecessary wrapper function, just call selectRandom() directly
 // loads a random phrase as the answer
-function randomPhrase () {
-  selectRandom()
-}
+// function randomPhrase () {
+//   selectRandom()
+// }
 
 // stores random answer
 function storeAnswerRandom (a) {
@@ -125,7 +127,8 @@ function removeInstructions () {
 
 // functions for changing the theme
 function switchTheme1 () {
-  $('#sheetStyle').attr('href', 'style.css')
+  // Setting a new numbered css file as the first color option
+  $('#sheetStyle').attr('href', 'style1.css')
 }
 
 function switchTheme2 () {
@@ -142,14 +145,17 @@ function switchTheme4 () {
 
 // event listeners
 answerButton.one('click', removeInstructions)
-answerButton.one('click', storeAnswer)
+// Unnecessary wrapper function, just call answerValidation() directly
+answerButton.one('click', /* storeAnswer */ answerValidation)
 answerButton.one('click', disableNewRandom)
 
 randomButton.one('click', removeInstructions)
-randomButton.one('click', randomPhrase)
+// Unnecessary wrapper function, just call selectRandom() directly
+randomButton.one('click', /* randomPhrase */ selectRandom)
 randomButton.one('click', disableNewAnswer)
 
-guessButton.on('click', storeGuess)
+// Unnecessary wrapper function, just call guessValidation() directly
+guessButton.on('click', /* storeGuess */ guessValidation)
 
 reset.on('click', resetPage)
 
